@@ -1,0 +1,139 @@
+<!DOCTYPE html>.
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LingoTogether</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="./lingo-2.jpg" />
+
+   
+    <!-- initialize the SDK after all desired features are loaded -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Cinzel+Decorative|Cormorant+Infant&display=swap" rel="stylesheet">
+
+
+  </head>
+  <body>
+
+	<div id="header">
+		<div class="container clearfix">
+			<nav class="navbar navbar-expand-sm fixed-top navbar-light ">
+				<a class="navbar-brand" href="index.html"><img src="./lingo-2.jpg" class="d-inline-block align-top my-logo" alt=""></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class='nav navbar-nav navli ml-auto'>
+						<!-- <li class="nav-0 active"><a href="#outlets">About us<br>關於我們</a></li>		
+						<li class="nav-1"><a href="#skills">Rules<br>規制</a></li>					
+						<li class="nav-2"><a href="#protfolio">Calender<br>日曆</a></li>
+						<li class="nav-3" ><a href="#experience">Join us<br>加入我們</a></li> -->
+						<!-- <li class="nav-4"><a href="https://forms.gle/j1z8bGRrfx72ucdG7" target="_blank">Sign up<br></a></li>
+						<li class="nav-5" style="border-radius: 3px; border:1px solid #ffdead"><a href="https://forms.gle/j1z8bGRrfx72ucdG7" target="_blank">Sign up<br>送出表單</a></li> -->
+						<li class="nav-4"><a href="login.html" target="_blank">Longin<br>登入</a></li>
+						<li class="nav-4"><a href="signin.html" target="_blank">Sign up<br>註冊</a></li>
+						<li class="nav-5" id='logOut'><a href="#" >loninOut</a></li>
+
+					</ul>
+
+				</div>
+
+			</nav>
+		</div>
+	</div>
+		<div id="content" class="loginPage">		
+
+	 	<div id="loginPage">
+			<div class="container clearfix">
+			<form id="signup-form"></form>
+		    	<div id="intro"class="wow fadeIn">
+						<h2> Login</h2>
+						<hr/>
+					</br>
+				</div>
+				<form id="login-form">
+					  <label for="login-email">Email address</label>
+						<input type="email" id="login-email" />
+						<label for="login-password">Password</label>
+						<input type="password" id="login-password" />
+						<input type="submit" value="Submit" />
+
+		        </form>
+						
+				<!-- <a href="#" >忘記密碼</a>
+				<a href="#" id='submitBtn'>立即註冊</a> -->
+			</div>		  
+		</div>
+		
+	</div>
+
+	<div id="footer" style="background-color: #20B2AA">
+		<div class="container clearfix" >
+			<div class="logo">
+				<img src="lingo-2.jpg" alt="logo">
+			</div>
+			<div class='row'>
+				<div class='footer-words col-md-6 col-sm-12'>
+					<div class="copyright">
+						<div class="title">&copy; Lingotogether2019.</div>
+						<div class="subtitle">practice languages together</div>
+					</div>
+				</div>
+				<div class='footer-icons col-md-6 col-sm-12'>
+					<div class="social-media">
+						<ul class="clearfix" >
+							<li><a href="#" target="_blank"><i class="fab fa-line"></i></a></li> 
+							<li><a href="mailto:hr@lingotogether.com"><i class="fas fa-envelope"></i></a></li> 
+							<li><a href="https://youtube.com"><i class="fab fa-youtube"></i></a></li> 
+						</ul>      
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>	
+
+	<a id="go-top" href="#header">Top</a>	
+
+
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC3SfuNNsK3KYxpaBM8ZE1sin6TIiOOvII",
+    authDomain: "lingotogether-91eaa.firebaseapp.com",
+    databaseURL: "https://lingotogether-91eaa.firebaseio.com",
+    projectId: "lingotogether-91eaa",
+    // storageBucket: "lingotogether-91eaa.appspot.com",
+    // messagingSenderId: "212355124640",
+    // appId: "1:212355124640:web:d9a9dd5a52e9ebbe8628c5",
+    // measurementId: "G-K8D2E6JBTZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth(); 
+  const db = firebase.firestore();
+
+// const loginForm = document.querySelector("#login-form");
+// loginForm.addEventListener('submit', (e)=>{
+//     e.preventDefault();
+//     const email = loginForm["login-email"].value;
+//     const password = loginForm["login-password"].value;
+//     auth.signInWithEmailAndPassword(email, password).then(cred =>{
+//            console.log(cred.user);
+//     })
+// })
+		
+	</script>
+	 <script src="scripts/auth.js"></script>
+    <!-- <script src="scripts/index.js"></script> -->
+  </body>
+</html>

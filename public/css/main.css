@@ -661,7 +661,7 @@ nav a:hover {
 }
 
 /*Login*/
-/* #loginPage .container {
+#loginPage .container {
   height: 600px;
 }
 #loginPage .container ul li input {
@@ -672,7 +672,7 @@ nav a:hover {
 }
 #loginPage.register {
   height: 800px;
-} */
+}
 
 /* #cardModal,
 #encyclopedia {
